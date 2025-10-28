@@ -1,0 +1,124 @@
+/* Global Bootstrap styles */
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+/* (Optional) Bootstrap Icons */
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+/* custom app-wide CSS below */
+body {
+  background-color: #f8f9fa;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.login-page {
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+}
+
+.card {
+  border-radius: 1rem !important;
+  background: rgba(255, 255, 255, 0.92);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.register-page,
+.login-page {
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+
+/* ===== Landing Page Styles (Updated) ===== */
+.landing-page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: flex; /* 👈 show top of image instead of center */
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.landing-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55); /* slightly lighter overlay */
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+.landing-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 20px;
+  margin-top: -40px; /* 👈 move content slightly upward for better balance */
+}
+
+.landing-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ffc107; /* Bootstrap warning yellow */
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.landing-subtitle {
+  font-size: 1.25rem;
+  color: #f8f9fa;
+  margin-bottom: 2rem;
+}
+
+.landing-buttons .btn {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.landing-buttons .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.landing-footer {
+  margin-top: 60px; /* 👈 adds more space below buttons */
+  color: #e9ecef;
+  font-size: 0.9rem;
+  position: relative;
+}
+body {
+  background: linear-gradient(135deg, #e0e7ff 0%, #f8f9fa 100%);
+}
