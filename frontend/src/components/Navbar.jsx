@@ -41,7 +41,8 @@ export default function Navbar() {
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
         <div className="container">
           {/* Brand */}
-          <Link className="navbar-brand fw-bold" to="/home">
+          {/*<Link className="navbar-brand fw-bold" to="/home">*/}
+          <Link className="navbar-brand fw-bold" to="/">
             Greater College
           </Link>
 

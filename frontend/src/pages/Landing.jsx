@@ -8,7 +8,8 @@ import "../index.css";
 
 export default function Landing() {
   const location = useLocation();
-  const hideNavbar = location.pathname === "/";
+  //const hideNavbar = location.pathname === "/";
+  const hideNavbar = location.pathname === "/land";
 
   return (
     <>
