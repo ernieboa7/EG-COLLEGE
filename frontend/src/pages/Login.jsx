@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 import { Container, Row, Col, Form, Button, Card, Spinner } from "react-bootstrap";
 
 
-import schoolImage from "../../public/schoolBackground.jpg";
+//import schoolImage from "../../public/schoolBackground.jpg";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -53,7 +53,7 @@ export default function Login() {
   return (
     <div
       className="login-page position-relative d-flex align-items-center justify-content-center min-vh-100"
-      style={{ backgroundImage: `url(${schoolImage})` }}
+      
     >
       
       {/* Dark overlay */}

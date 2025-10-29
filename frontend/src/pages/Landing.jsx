@@ -3,7 +3,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar.jsx";
-import schoolImage from "../../public/schoolBackground.jpg";
+//import schoolImage from "../../public/schoolBackground.jpg";
 import "../index.css";
 
 export default function Landing() {
@@ -16,7 +16,7 @@ export default function Landing() {
 
       <div
         className="landing-page position-relative d-flex align-items-center justify-content-center min-vh-100"
-              style={{ backgroundImage: `url(${schoolImage})` }}
+              
       >
         <div className="landing-overlay"></div>
 

@@ -4,7 +4,7 @@ import { useRegisterMutation } from "../services/api.js";
 import { useNavigate, Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import { Container, Row, Col, Form, Button, Card, Spinner } from "react-bootstrap";
-import schoolImage from "../../public/schoolBackground.jpg"; // same background as Landing and Login
+//import schoolImage from "../../public/schoolBackground.jpg"; // same background as Landing and Login
 
 export default function Register() {
   const [form, setForm] = useState({
@@ -32,7 +32,7 @@ export default function Register() {
     <div
       className="register-page position-relative d-flex align-items-center justify-content-center min-vh-100"
       style={{
-        backgroundImage: `url(${schoolImage})`,
+        //backgroundImage: `url(${schoolImage})`,
         backgroundSize: "cover",
         backgroundPosition: "top center",
         backgroundRepeat: "no-repeat",
