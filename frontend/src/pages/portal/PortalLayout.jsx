@@ -181,6 +181,8 @@ export default function PortalLayout() {
 */
 
 
+/*
+
 import { Outlet, NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 //import { logout } from "../../features/auth/authSlice.js";
@@ -211,7 +213,7 @@ export default function PortalLayout() {
 
   return (
     <>
-      {/* ===== TOP NAVBAR ===== */}
+      {/* ===== TOP NAVBAR ===== *
       <Navbar
         bg="primary"
         variant="dark"
@@ -229,7 +231,7 @@ export default function PortalLayout() {
 
           <Navbar.Toggle aria-controls="portalNavbar" />
           <Navbar.Collapse id="portalNavbar">
-            {/* ===== HORIZONTAL NAV LINKS ===== */}
+            {/* ===== HORIZONTAL NAV LINKS ===== *
             <Nav className="me-auto text-center">
               <NavLink
                 to="/portal/results"
@@ -320,7 +322,7 @@ export default function PortalLayout() {
         </Container>
       </Navbar>
 
-      {/* ===== MAIN CONTENT AREA ===== */}
+      {/* ===== MAIN CONTENT AREA ===== *
       <main className="p-4 bg-light min-vh-100">
         <Container fluid>
           {isLoading ? (
@@ -336,5 +338,57 @@ export default function PortalLayout() {
 
       
     </>
+  );
+}
+
+*/
+
+import { Container, Nav } from "react-bootstrap";
+import { Outlet, NavLink } from "react-router-dom";
+import { useProfileQuery } from "../../services/api.js";
+import { useSelector } from "react-redux";
+
+const LinkItem = ({ to, children }) => (
+  <NavLink
+    to={to}
+    className={({ isActive }) =>
+      `px-3 py-2 rounded ${
+        isActive ? "bg-primary text-white fw-semibold" : "text-dark hover:bg-light"
+      }`
+    }
+  >
+    {children}
+  </NavLink>
+);
+
+export default function PortalLayout() {
+  const { token } = useSelector((state) => state.auth);
+  const { data: student, isLoading } = useProfileQuery(undefined, { skip: !token });
+
+  return (
+    <Container className="py-3">
+      <h2 className="text-primary fw-bold mb-4">
+        {isLoading
+          ? "Loading..."
+          : student
+          ? `${student.firstName} ${student.lastName}`
+          : "Student Portal"}
+      </h2>
+
+      {/* ====== Navigation Tabs ====== */}
+      <Nav variant="tabs" className="mb-3 flex-wrap">
+        <LinkItem to="/portal/results">Results</LinkItem>
+        <LinkItem to="/portal/courses">Courses</LinkItem>
+        <LinkItem to="/portal/timetable">Timetable</LinkItem>
+        <LinkItem to="/portal/fees">Fees</LinkItem>
+        <LinkItem to="/portal/library">Library</LinkItem>
+        <LinkItem to="/portal/my-borrows">My Borrows</LinkItem>
+        <LinkItem to="/portal/projects">Projects</LinkItem>
+        <LinkItem to="/portal/committees">Committees</LinkItem>
+      </Nav>
+
+      {/* ====== Content Area ====== */}
+      <Outlet />
+    </Container>
   );
 }
