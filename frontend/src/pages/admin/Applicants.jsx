@@ -10,6 +10,8 @@ import {
 } from "../../services/api";
 import AdminModal from "../../components/AdminModal";
 
+import { Table, Button, Spinner, Container } from "react-bootstrap";
+
 export default function Applicants() {
   const { data: applicants = [], isLoading, isError, error } = useAdminApplicantsQuery();
   const [createApplicant] = useCreateApplicantMutation();
@@ -85,7 +87,7 @@ export default function Applicants() {
 
   return (
    <Container className="py-4">
-    <div className="container py-4">
+    <div className="py-3">
       <h2 className="text-primary mb-4 fw-semibold">Applicants Management</h2>
 
       {message && <div className="alert alert-info text-center">{message}</div>}

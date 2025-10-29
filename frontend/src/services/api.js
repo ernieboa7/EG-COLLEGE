@@ -402,6 +402,11 @@ export const api = createApi({
       providesTags: ["Committees"],
     }),
 
+    adminDashboard: build.query({
+      query: () => "/admin/dashboard",
+      providesTags: ["Dashboard"],
+    }),
+
 
 
 
@@ -498,6 +503,9 @@ export const {
 
   // Admin - Finance
   useAdminPaymentsQuery,
+
+  useAdminDashboardQuery,
+
 
   useCommitteesQuery,
 

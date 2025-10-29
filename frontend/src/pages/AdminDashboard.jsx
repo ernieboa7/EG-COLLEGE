@@ -1,4 +1,4 @@
-
+/*
 
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -14,7 +14,7 @@ export default function AdminDashboard() {
   useEffect(() => {
     const fetchDashboard = async () => {
       try {
-        const res = await axios.get(/*"https://eg-college.onrender.com/api/admin/dashboard" || */"http://localhost:8080/api/admin/dashboard", {
+        const res = await axios.get(/*"https://eg-college.onrender.com/api/admin/dashboard" || "http://localhost:8080/api/admin/dashboard", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setStats(res.data);
@@ -123,6 +123,152 @@ export default function AdminDashboard() {
             </Card.Body>
           </Card>
         </Col>
+        <Col md={3}>
+          <Card className="text-center shadow-sm border-0 bg-light">
+            <Card.Body>
+              <Card.Title className="text-primary">Finance</Card.Title>
+              <h3>{stats.financesCount || 0}</h3>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
+  );
+}
+
+*/
+
+import { Container, Row, Col, Card, Spinner, Alert } from "react-bootstrap";
+import { useAdminDashboardQuery } from "../services/api"; // ✅ adjust path if needed
+
+export default function AdminDashboard() {
+  //const { data: stats = {}, isLoading, isError, error } = useAdminDashboardQuery();
+  const {
+  data: stats = {},
+  isLoading,
+  isError,
+  error,
+  //refetch
+} = useAdminDashboardQuery(undefined, {
+  refetchOnMountOrArgChange: true,
+  refetchOnFocus: true,
+  refetchOnReconnect: true,
+});
+
+
+  if (isLoading) {
+    return (
+      <Container className="py-5 text-center">
+        <Spinner animation="border" variant="primary" />
+      </Container>
+    );
+  }
+
+  if (isError) {
+    return (
+      <Container className="py-5">
+        <Alert variant="danger">
+          {error?.data?.message || "Failed to load dashboard data."}
+        </Alert>
+      </Container>
+    );
+  }
+
+  return (
+    <Container className="py-5">
+      <h2 className="text-primary mb-4">Statistics</h2>
+
+      <Row className="g-4">
+        <Col md={3}>
+          <Card className="text-center shadow-sm border-0 bg-light">
+            <Card.Body>
+              <Card.Title className="text-primary">Applicants</Card.Title>
+              <h3>{stats.applicantsCount || 0}</h3>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col md={3}>
+          <Card className="text-center shadow-sm border-0 bg-light">
+            <Card.Body>
+              <Card.Title className="text-primary">Departments</Card.Title>
+              <h3>{stats.departmentCount || 0}</h3>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col md={3}>
+          <Card className="text-center shadow-sm border-0 bg-light">
+            <Card.Body>
+              <Card.Title className="text-success">Students</Card.Title>
+              <h3>{stats.studentsCount || 0}</h3>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col md={3}>
+          <Card className="text-center shadow-sm border-0 bg-light">
+            <Card.Body>
+              <Card.Title className="text-warning">Teachers</Card.Title>
+              <h3>{stats.teachersCount || 0}</h3>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col md={3}>
+          <Card className="text-center shadow-sm border-0 bg-light">
+            <Card.Body>
+              <Card.Title className="text-danger">Courses</Card.Title>
+              <h3>{stats.coursesCount || 0}</h3>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col md={3}>
+          <Card className="text-center shadow-sm border-0 bg-light">
+            <Card.Body>
+              <Card.Title className="text-primary">Timetables</Card.Title>
+              <h3>{stats.timetablesCount || 0}</h3>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col md={3}>
+          <Card className="text-center shadow-sm border-0 bg-light">
+            <Card.Body>
+              <Card.Title className="text-primary">Results</Card.Title>
+              <h3>{stats.resultsCount || 0}</h3>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col md={3}>
+          <Card className="text-center shadow-sm border-0 bg-light">
+            <Card.Body>
+              <Card.Title className="text-primary">Library</Card.Title>
+              <h3>{stats.libraryCount || 0}</h3>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col md={3}>
+          <Card className="text-center shadow-sm border-0 bg-light">
+            <Card.Body>
+              <Card.Title className="text-primary">Projects</Card.Title>
+              <h3>{stats.projectsCount || 0}</h3>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col md={3}>
+          <Card className="text-center shadow-sm border-0 bg-light">
+            <Card.Body>
+              <Card.Title className="text-primary">Committees</Card.Title>
+              <h3>{stats.committeesCount || 0}</h3>
+            </Card.Body>
+          </Card>
+        </Col>
+
         <Col md={3}>
           <Card className="text-center shadow-sm border-0 bg-light">
             <Card.Body>

@@ -122,3 +122,196 @@ body {
 body {
   background: linear-gradient(135deg, #e0e7ff 0%, #f8f9fa 100%);
 }
+
+
+/* ==========================
+    GLOBAL BASE STYLES
+   ========================== */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+  scroll-behavior: smooth;
+}
+
+/* Global container spacing */
+.container,
+.container-fluid {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Links & navigation */
+a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Navbar styling */
+.navbar {
+  transition: all 0.3s ease;
+}
+.nav-link {
+  font-weight: 500;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+.nav-link:hover {
+  color: #ffc107 !important;
+}
+.nav-link.active {
+  font-weight: 600;
+  background-color: rgba(13, 110, 253, 0.1);
+  border-radius: 6px;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* Buttons */
+.btn {
+  border-radius: 6px;
+  font-weight: 500;
+}
+.btn-primary {
+  background-color: #0d6efd;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #0b5ed7;
+}
+
+/* Tables */
+.table {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Layout adjustments */
+main {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+/* Scrollbar (for webkit browsers) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+/* ==========================
+   📱 RESPONSIVE DESIGN
+   ========================== */
+
+/* Small devices (phones) */
+@media (max-width: 576px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .container,
+  .container-fluid {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.5rem;
+  }
+
+  .card {
+    margin-bottom: 1rem;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+
+  .btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 577px) and (max-width: 992px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+  }
+
+  .card {
+    margin-bottom: 1.2rem;
+  }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 993px) {
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* ==========================
+   🌙 DARK MODE (optional)
+   ========================== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1a1a1a;
+    color: #eaeaea;
+  }
+
+  .card {
+    background-color: #2a2a2a;
+    color: #fff;
+  }
+
+  .navbar {
+    background-color: #0b5ed7 !important;
+  }
+
+  a {
+    color: #66b2ff;
+  }
+  a:hover {
+    color: #80c7ff;
+  }
+}
