@@ -15,8 +15,8 @@ export default function Landing() {
       {!hideNavbar && <Navbar />}
 
       <div
-        className="landing-page"
-        style={{ backgroundImage: `url(${schoolImage})` }}
+        className="landing-page position-relative d-flex align-items-center justify-content-center min-vh-100"
+              style={{ backgroundImage: `url(${schoolImage})` }}
       >
         <div className="landing-overlay"></div>
 
