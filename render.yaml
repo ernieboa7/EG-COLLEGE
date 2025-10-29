@@ -1,25 +1,45 @@
+
+
+
+
+
+
+
+
 services:
   - type: web
     name: eg-college
     env: node
-    plan: free        # or starter/standard for production
+    plan: free  # change to "starter" or higher for production reliability
     rootDir: backend
+
     buildCommand: |
-      # Install backend deps
+      echo "🔧 Building backend..."
       npm ci
-      # Build frontend
-      cd ../frontend && npm ci && npm run build
+      echo " Building frontend..."
+      cd ../frontend
+      npm ci
+      npm run build
+      cd ../backend
+      echo " Build complete."
+
     startCommand: node server.js
+
     autoDeploy: true
     healthCheckPath: /api/health
+
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
         value: 8080
+      - key: BASE_PATH
+        value: /api
       - key: MONGO_URI
-        sync: false
+        sync: false     # set securely in Render dashboard
       - key: JWT_SECRET
-        sync: false
+        sync: false     # set securely in Render dashboard
       - key: VITE_API_URL
-        value: /api   # frontend will call relative paths
+        value: /api     # frontend uses relative /api calls
+      - key: CORS_ORIGIN
+        value: https://eg-college.onrender.com
