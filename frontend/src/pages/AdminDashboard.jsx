@@ -192,7 +192,7 @@ export default function AdminDashboard() {
           <Card className="text-center shadow-sm border-0 bg-light">
             <Card.Body>
               <Card.Title className="text-primary">Departments</Card.Title>
-              <h3>{stats.departmentCount || 0}</h3>
+              <h3>{stats.departmentsCount || 0}</h3>
             </Card.Body>
           </Card>
         </Col>
