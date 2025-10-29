@@ -219,6 +219,8 @@ app.use("/api/applicants", applicantRoutes);
 app.use("/api/borrows", borrowRoutes);
 app.use("/uploads", express.static("uploads"));
 
+app.use("/api/committees", adminRoutes);
+
 // Root test route
 app.get("/api", (_, res) => {
   res.send(" School Management API running successfully!");
@@ -228,16 +230,7 @@ app.get("/api", (_, res) => {
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-/*if (process.env.NODE_ENV === "production") {
-  const frontendPath = path.join(__dirname, "../frontend/dist");
-  app.use(express.static(frontendPath));
 
-  //  Correct wildcard syntax for Express 5
-  app.get("/*", (req, res) => {
-    res.sendFile(path.resolve(frontendPath, "index.html"));
-  });
-}
-  */
 
 
 if (process.env.NODE_ENV === "production") {
