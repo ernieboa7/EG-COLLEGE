@@ -84,6 +84,7 @@ export default function Applicants() {
     return <p className="text-danger">{error?.data?.message || "Failed to fetch applicants."}</p>;
 
   return (
+   <Container className="py-4">
     <div className="container py-4">
       <h2 className="text-primary mb-4 fw-semibold">Applicants Management</h2>
 
@@ -159,5 +160,6 @@ export default function Applicants() {
         submitLabel={editData ? "Update" : "Add"}
       />
     </div>
+   </Container>  
   );
 }
