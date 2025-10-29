@@ -2,8 +2,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 //  Base URL (backend running on port 8080)
 const baseQuery = fetchBaseQuery({
-  //baseUrl: import.meta.env.VITE_API_URL || "http://localhost:8080/api", 
-  baseUrl: import.meta.env.VITE_API_URL || "https://eg-college.onrender.com/api",
+  baseUrl: import.meta.env.VITE_API_URL || "http://localhost:8080/api", 
+  //baseUrl: import.meta.env.VITE_API_URL || "https://eg-college.onrender.com/api",
   prepareHeaders: (headers, { getState }) => {
     const token = getState()?.auth?.token || localStorage.getItem("token");
     if (token) headers.set("authorization", `Bearer ${token}`);
