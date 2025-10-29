@@ -1,9 +1,43 @@
-node_modules/
 
+
+# ======================================
+# NODE & DEPENDENCIES
+# ======================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ======================================
+# ENV FILES (Sensitive)
+# ======================================
 .env
 backend/.env
 frontend/.env
-dist/
-.DS_Store
-*.log
 
+# ======================================
+# BUILD / DIST FILES
+# ======================================
+dist/
+dist-ssr/
+build/
+.vite/
+coverage/
+
+# ======================================
+# EDITORS & SYSTEM FILES
+# ======================================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# ======================================
+# MISC
+# ======================================
+*.local
+*.log
+*.pid
+*.seed
+uploads/
