@@ -109,7 +109,8 @@ export default function Applicants() {
       {applicants.length === 0 ? (
         <p>No applicants found.</p>
       ) : (
-        <table className="table table-bordered table-striped text-sm">
+        
+        <Table bordered hover responsive size="sm" className="align-middle">
           <thead className="table-light">
             <tr>
               <th>Name</th>
@@ -148,7 +149,7 @@ export default function Applicants() {
               </tr>
             ))}
           </tbody>
-        </table>
+        </Table>
       )}
 
       {/* Admin Modal */}
