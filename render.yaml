@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: eg-college
+    env: node
+    plan: free        # or starter/standard for production
+    rootDir: backend
+    buildCommand: |
+      # Install backend deps
+      npm ci
+      # Build frontend
+      cd ../frontend && npm ci && npm run build
+    startCommand: node server.js
+    autoDeploy: true
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 8080
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: VITE_API_URL
+        value: /api   # frontend will call relative paths
