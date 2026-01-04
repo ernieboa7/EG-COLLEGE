@@ -220,7 +220,7 @@ export default function Home() {
 
       {/* === Contact Info === */}
       <footer className="text-center mt-5">
-        <h5 className="text-secondary mb-3">Contact Administration</h5>
+        <h5 className="text-secondary mb-3">Contact Us</h5>
         <p className="mb-1">
           <strong>Email:</strong>{" "}
           <a
