@@ -87,6 +87,6 @@ export const libraryBooks = [
 ];
 
 export const feeItems = [
-  { id: 1, title: "Tuition", amount: 500, applicableLevels: [1,2,3,4,5,6] },
+  { id: 1, title: "Tuition", amount: 2500, applicableLevels: [1,2,3,4,5,6] },
   { id: 2, title: "Lab Fee", amount: 150, applicableLevels: [4,5,6] },
 ];
