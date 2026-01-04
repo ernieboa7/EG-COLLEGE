@@ -69,6 +69,10 @@ export default function ApplyForm() {
             <option>Computer Science</option>
             <option>Business Administration</option>
             <option>Health & Social Care</option>
+            <option>Data Science</option>
+            <option>Cyber Security</option>
+            <option>Accounting & Finance</option>
+            <option>Education Studies</option>
           </Form.Select>
         </Form.Group>
 
