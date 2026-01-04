@@ -8,6 +8,9 @@ import Register from "./pages/Register.jsx";
 import Home from "./pages/Home.jsx";
 import ApplyForm from "./pages/ApplyForm.jsx";
 
+import CourseDetails from "./pages/CourseDetails";
+
+
 // === Layouts & Components ===
 import Navbar from "./components/Navbar.jsx";
 import ProtectedRoute from "./routes/ProtectedRoute.jsx";
@@ -56,6 +59,9 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/apply" element={<ApplyForm />} /> {/* Public apply page */}
+
+        <Route path="/courses/:slug" element={<CourseDetails />} />
+
 
         {/* ================= STUDENT PORTAL (Protected) ================= */}
         <Route element={<ProtectedRoute />}>
