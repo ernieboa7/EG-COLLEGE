@@ -1,30 +1,8 @@
-/*import { useParams, Link } from "react-router-dom";
-import { Container, Button } from "react-bootstrap";
 
-export default function CourseDetails() {
-  const { slug } = useParams();
-
-  return (
-    <Container className="py-5">
-      <h2 className="fw-bold text-primary text-capitalize">
-        {slug.replaceAll("-", " ")}
-      </h2>
-      <p className="text-muted">
-        This is the course details page. You can show modules, fees, duration,
-        and entry requirements here.
-      </p>
-
-      <Link to="/">
-        <Button variant="secondary">Back to Home</Button>
-      </Link>
-    </Container>
-  );
-}
-*/
 
 import { useParams, Link } from "react-router-dom";
 import { Container, Button, Card, ListGroup, Badge } from "react-bootstrap";
-import { courses } from "../data/coursesData"; // ✅ IMPORTANT
+import { courses } from "../data/coursesData"; //  IMPORTANT
 
 export default function CourseDetails() {
   const { slug } = useParams();
@@ -35,7 +13,7 @@ export default function CourseDetails() {
       <Container className="py-5">
         <h2 className="fw-bold text-danger">Course not found</h2>
         <p className="text-muted">
-          The course you’re looking for doesn’t exist.
+          The course you are looking for does not exist.
         </p>
         <Link to="/">
           <Button variant="secondary">Back to Home</Button>
