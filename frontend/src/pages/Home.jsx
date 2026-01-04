@@ -102,63 +102,14 @@ export default function Home() {
 }
 */
 
+
+
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { courses } from "../data/coursesData"; // IMPORTANT
 
-const courses = [
-  {
-    title: "Computer Science",
-    description:
-      "Learn programming, databases, and full-stack web development to build tomorrow’s technology.",
-    icon: "bi-laptop",
-    slug: "computer-science",
-  },
-  {
-    title: "Business Administration",
-    description:
-      "Master management principles, entrepreneurship, and financial planning to lead in global markets.",
-    icon: "bi-briefcase",
-    slug: "business-administration",
-  },
-  {
-    title: "Health & Social Care",
-    description:
-      "Develop compassionate care skills and understanding of social support in community health.",
-    icon: "bi-heart-pulse",
-    slug: "health-social-care",
-  },
-  {
-    title: "Data Science",
-    description:
-      "Learn data analysis, machine learning, and visualization techniques to turn data into insights.",
-    icon: "bi-bar-chart-line",
-    slug: "data-science",
-  },
-  {
-    title: "Cyber Security",
-    description:
-      "Gain skills in network security, ethical hacking, and digital forensics to protect systems.",
-    icon: "bi-shield-lock",
-    slug: "cyber-security",
-  },
-  {
-    title: "Accounting & Finance",
-    description:
-      "Understand financial reporting, auditing, taxation, and investment management practices.",
-    icon: "bi-currency-euro",
-    slug: "accounting-finance",
-  },
-  {
-    title: "Education Studies",
-    description:
-      "Prepare for a career in teaching and education with a focus on learning methodologies.",
-    icon: "bi-mortarboard",
-    slug: "education-studies",
-  },
-];
-
-// Small animation helpers
+// Animation variants
 const cardVariants = {
   hidden: { opacity: 0, y: 16, scale: 0.98 },
   visible: (i) => ({
@@ -211,11 +162,17 @@ export default function Home() {
                       {course.description}
                     </Card.Text>
 
-                    {/* Button at bottom */}
-                    <div className="mt-auto">
-                      <Link to={`/courses/${course.slug}`}>
+                    {/* Buttons */}
+                    <div className="mt-auto d-flex flex-column gap-2">
+                      <Link to={`/courses/${course.slug}`} className="w-100">
                         <Button variant="outline-primary" className="w-100">
                           View Course
+                        </Button>
+                      </Link>
+
+                      <Link to="/apply" className="w-100">
+                        <Button variant="primary" className="w-100">
+                          Apply Now
                         </Button>
                       </Link>
                     </div>
@@ -238,8 +195,8 @@ export default function Home() {
             <strong>Application Deadline:</strong> August 30, 2025
           </li>
           <li>
-            <strong>Requirements:</strong> 5 O'Level credits including English
-            and Mathematics
+            <strong>Requirements:</strong> 5 O&apos;Level credits including
+            English and Mathematics
           </li>
           <li>
             <strong>Application Fee:</strong> €50 (non-refundable)
